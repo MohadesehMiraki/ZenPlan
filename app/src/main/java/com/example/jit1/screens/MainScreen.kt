@@ -1,6 +1,8 @@
 package com.example.jit1.screens
 
+import android.content.Context
 import android.os.Build
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -31,8 +33,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
+import com.example.jit1.MainActivity.Companion.database
 import com.example.jit1.R
 import com.example.jit1.animation.ImageChange
 import com.example.jit1.composable.BottomSheet
@@ -64,7 +68,8 @@ private fun BottomNavigationIconButtons() {
                 shadowElevation = 20f
             }
     ) {
-        IconButton(onClick = { selectedTab = 0 }) {
+        IconButton(onClick = { selectedTab = 0
+        }) {
             ImageChange(
                 isSelected = selectedTab == 0,
                 R.drawable.ic_home_filled,
@@ -129,8 +134,6 @@ fun MainScreenUI() {
     var isVisible by remember {
         mutableStateOf(false)
     }
-
-
 
     dynamicColorThemes = GetThemeColors()
     MyPlannerTheme(dynamicColorThemes) {
