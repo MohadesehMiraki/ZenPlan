@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Jit1</string>
     <string name="deep_focus">Let\'s Start</string>
+    <string name="add_new">What do you want to add?</string>
+    <string name="task">Task</string>
+    <string name="habit">Habit</string>
+    <string name="micro_challenge">Micro challenge</string>
+    <string name="gratitude">Gratitude journal</string>
 </resources>

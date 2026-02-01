@@ -34,8 +34,8 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.example.jit1.R
-import com.example.jit1.animation.DisplayDismiss
 import com.example.jit1.animation.ImageChange
+import com.example.jit1.composable.BottomSheet
 import com.example.jit1.composable.DateText
 import com.example.jit1.composable.ImageCard
 import com.example.jit1.composable.WeekDaysRow
@@ -162,7 +162,9 @@ fun MainScreenUI() {
                 WeekDaysRow(dynamicColors = dynamicColorThemes)
                 ImageCard(imageBitmap = imageBitmap, dynamicColorThemes)
             }
-            DisplayDismiss(isVisible = isVisible, onDissmissClick = { isVisible = false })
+            BottomSheet(bottomSheetState = isVisible, onDismiss = {
+                isVisible=false
+            })
         }
 
 
